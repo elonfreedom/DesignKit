@@ -12,8 +12,8 @@ import UIKit
 public extension UIFont {
 
     // 计算属性 `designKit` 返回 `DesignKit.OFFont` 中定义的字体
-    static var designKit: DesignKit {
-        return DesignKit()
+    static var designKit: DesignKit.Type {
+        return DesignKit.self
     }
     struct DesignKit {
         /// 系统默认 34号,加粗
