@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     static func make() -> UILabel {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -19,7 +19,7 @@ extension UILabel {
     }
 }
 
-extension UIImageView {
+public extension UIImageView {
     static func make() -> UIImageView {
         let imageView = UIImageView()
         imageView.backgroundColor = .clear
@@ -28,7 +28,7 @@ extension UIImageView {
     }
 }
 
-extension UIButton {
+public extension UIButton {
     static func make() -> UIButton {
         let button = UIButton(type: .custom)
         button.backgroundColor = .clear
@@ -39,7 +39,7 @@ extension UIButton {
     }
 }
 
-extension UITextField {
+public extension UITextField {
     static func make() -> UITextField {
         let textField = UITextField()
         textField.backgroundColor = .clear

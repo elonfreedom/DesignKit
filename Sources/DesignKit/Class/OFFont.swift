@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 
-extension UIFont {
-    public struct DesignKit {
+public extension UIFont {
+    struct DesignKit {
         public struct OFFont {
             /// 系统默认 34号,加粗
             static var largeBoldTitle: UIFont = OFFont.isFollowSystemFont ? .preferredFont(forTextStyle: .largeTitle) : .boldSystemFont(ofSize: 34)

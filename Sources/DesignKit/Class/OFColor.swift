@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     /// 使用rgb方式生成自定义颜色
     convenience init(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ a: CGFloat = 1.0) {
         let red = r / 255.0
@@ -29,8 +29,8 @@ extension UIColor {
 
     ///  暗黑模式
     /// - Parameters:
-    ///   - lightColor: <#lightColor description#>
-    ///   - darkColor: <#darkColor description#>
+    ///   - lightColor
+    ///   - darkColor:
     /// - Returns: color
     static func dynamicColor(lightColor: UIColor, darkColor: UIColor? = nil) -> UIColor {
         return UIColor { (traits) -> UIColor in
@@ -41,9 +41,8 @@ extension UIColor {
         }
     }
 
-    public struct DesignKit {
+    struct DesignKit {
         public struct OFColor {
-
             public static let primaryColor = UIColor.dynamicColor(lightColor: .blue)
 
             /// 文字颜色 333333
@@ -54,7 +53,7 @@ extension UIColor {
 
             /// 提醒文字颜色 999999
             public static let tipTextColor = UIColor.dynamicColor(lightColor: UIColor(0x999999))
-            
+
             // 添加其他颜色
         }
     }
