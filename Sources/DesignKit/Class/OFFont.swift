@@ -10,7 +10,12 @@ import UIKit
 
 
 public extension UIFont {
-    public struct DesignKit {
+
+    // 计算属性 `designKit` 返回 `DesignKit.OFFont` 中定义的字体
+    static var designKit: DesignKit.OFFont {
+        return DesignKit.OFFont()
+    }
+    struct DesignKit {
         public struct OFFont {
             /// 系统默认 34号,加粗
             public static var largeBoldTitle: UIFont = OFFont.isFollowSystemFont ? .preferredFont(forTextStyle: .largeTitle) : .boldSystemFont(ofSize: 34)
@@ -39,15 +44,21 @@ public extension UIFont {
             // 添加其他字体
 
             /// 是否跟随系统字体  (adjustsFontForContentSizeCategory 设置为 true)
-            static private var isFollowSystemFont: Bool = UserDefaults.standard.bool(forKey: UserDefaults.DesignKit.followSystemFont)
+            static private var isFollowSystemFont: Bool = UserDefaults.standard.bool(forKey: UserDefaults.DesignKit.OFUserDefaults.followSystemFont)
         }
     }
 }
 
 public extension UserDefaults {
+    static var designKit: DesignKit.OFUserDefaults {
+        return DesignKit.OFUserDefaults()
+    }
     struct DesignKit {
-        /// 跟随系统字体
-        public static let followSystemFont = "FollowSystemFont"
+        public struct OFUserDefaults {
+            /// 跟随系统字体
+            public static let followSystemFont = "FollowSystemFont"
+
+        }
     }
 
 }

@@ -41,6 +41,10 @@ public extension UIColor {
         }
     }
 
+    static var designKit: DesignKit.OFColor {
+        return DesignKit.OFColor()
+    }
+
     struct DesignKit {
         public struct OFColor {
             public static let primaryColor = UIColor.dynamicColor(lightColor: .blue)
