@@ -41,8 +41,8 @@ public extension UIColor {
         }
     }
 
-    static var designKit: DesignKit {
-        return DesignKit()
+    static var designKit: DesignKit.Type {
+        return DesignKit.self
     }
 
     struct DesignKit {
