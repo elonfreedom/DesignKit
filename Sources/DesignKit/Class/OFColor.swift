@@ -41,25 +41,23 @@ public extension UIColor {
         }
     }
 
-    static var designKit: DesignKit.OFColor {
-        return DesignKit.OFColor()
+    static var designKit: DesignKit {
+        return DesignKit()
     }
 
     struct DesignKit {
-        public struct OFColor {
-            public static let primaryColor = UIColor.dynamicColor(lightColor: .blue)
+        public static let primaryColor = UIColor.dynamicColor(lightColor: .blue)
 
-            /// 文字颜色 333333
-            public static let textColor = UIColor.dynamicColor(lightColor: UIColor(0x333333))
+        /// 文字颜色 333333
+        public static let textColor = UIColor.dynamicColor(lightColor: UIColor(0x333333))
 
-            /// 次文字颜色 666666
-            public static let subTextColor = UIColor.dynamicColor(lightColor: UIColor(0x666666))
+        /// 次文字颜色 666666
+        public static let subTextColor = UIColor.dynamicColor(lightColor: UIColor(0x666666))
 
-            /// 提醒文字颜色 999999
-            public static let tipTextColor = UIColor.dynamicColor(lightColor: UIColor(0x999999))
+        /// 提醒文字颜色 999999
+        public static let tipTextColor = UIColor.dynamicColor(lightColor: UIColor(0x999999))
 
-            // 添加其他颜色
-        }
+        // 添加其他颜色
     }
 }
 
