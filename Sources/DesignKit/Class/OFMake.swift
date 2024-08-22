@@ -5,7 +5,6 @@
 //  Created by elonfreedom on 2024/8/17.
 //
 
-import Foundation
 import UIKit
 
 public extension UILabel {

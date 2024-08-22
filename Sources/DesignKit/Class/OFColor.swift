@@ -5,7 +5,6 @@
 //  Created by elonfreedom on 2024/8/17.
 //
 
-import Foundation
 import UIKit
 
 public extension UIColor {
@@ -32,32 +31,43 @@ public extension UIColor {
     ///   - lightColor
     ///   - darkColor:
     /// - Returns: color
-    static func dynamicColor(lightColor: UIColor, darkColor: UIColor? = nil) -> UIColor {
-        return UIColor { (traits) -> UIColor in
-            guard traits.userInterfaceStyle == .dark else {
-                return lightColor
-            }
-            return darkColor ?? lightColor
-        }
+    static func dynamicColor(by light: UIColor, dark: UIColor? = nil) -> UIColor {
+        return UIColor { $0.userInterfaceStyle == .light ? light : dark ?? light }
     }
 
     static var designKit: DesignKit.Type {
         return DesignKit.self
     }
 
-    struct DesignKit {
-        public static let primaryColor = UIColor.dynamicColor(lightColor: .blue)
+    enum DesignKit {
+        
+        /// 主题色
+        public static let primaryColor = UIColor.dynamicColor(by: UIColor(0x0770e3))
 
         /// 文字颜色 333333
-        public static let textColor = UIColor.dynamicColor(lightColor: UIColor(0x333333))
+        public static let textColor = UIColor.dynamicColor(by: UIColor(0x333333))
 
         /// 次文字颜色 666666
-        public static let subTextColor = UIColor.dynamicColor(lightColor: UIColor(0x666666))
+        public static let subTextColor = UIColor.dynamicColor(by: UIColor(0x666666))
 
         /// 提醒文字颜色 999999
-        public static let tipTextColor = UIColor.dynamicColor(lightColor: UIColor(0x999999))
+        public static let tipTextColor = UIColor.dynamicColor(by: UIColor(0x999999))
+        
+        /// 背景色
+        public static let backgroundColor = UIColor.dynamicColor(by: UIColor(0xf5f5f5))
+        
+        /// 次背景
+        public static let subBackgroundColor = UIColor.dynamicColor(by: UIColor(0xffffff))
+        
+        /// 不可用颜色
+        public static let disableColor: UIColor = dynamicColor(by: UIColor(0xE6E6E7))
+        
+        /// 活跃色
+        public static let activeColor: UIColor = dynamicColor(by: UIColor(0x1677FF))
+        
+        /// 警告色
+        public static let dangerColor: UIColor = dynamicColor(by: UIColor(0xFE4C44))
 
-        // 添加其他颜色
     }
 }
 

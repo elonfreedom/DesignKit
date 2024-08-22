@@ -5,13 +5,11 @@
 //  Created by elonfreedom on 2024/8/17.
 //
 
-import Foundation
 import UIKit
 
 
 public extension UIFont {
 
-    // 计算属性 `designKit` 返回 `DesignKit.OFFont` 中定义的字体
     static var designKit: DesignKit.Type {
         return DesignKit.self
     }
